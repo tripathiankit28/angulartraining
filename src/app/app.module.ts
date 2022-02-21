@@ -6,18 +6,29 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     FooterComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    RouterModule.forRoot([
+        {path: 'about-us', component: AboutUsComponent},
+        {path: 'contact-us', component: ContactUsComponent},
+        {path: 'directives', component:DirectivesComponent}
+      ]),
+    ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
