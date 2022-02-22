@@ -9,6 +9,9 @@ import { DirectivesComponent } from './directives/directives.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RouterModule } from '@angular/router';
+import { DataFetchComponent } from './data-fetch/data-fetch.component';
+import {DataService} from './data.service'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,19 +20,22 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     DirectivesComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    DataFetchComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([
         {path: 'about-us', component: AboutUsComponent},
         {path: 'contact-us', component: ContactUsComponent},
-        {path: 'directives', component:DirectivesComponent}
+        {path: 'directives', component:DirectivesComponent},
+        {path: 'DataFetch', component:DataFetchComponent}
       ]),
     ],
   
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
