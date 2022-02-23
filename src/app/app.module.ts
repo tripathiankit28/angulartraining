@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { DataFetchComponent } from './data-fetch/data-fetch.component';
 import {DataService} from './data.service'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,17 +23,20 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     DirectivesComponent,
     AboutUsComponent,
     ContactUsComponent,
-    DataFetchComponent
+    DataFetchComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot([
         {path: 'about-us', component: AboutUsComponent},
         {path: 'contact-us', component: ContactUsComponent},
         {path: 'directives', component:DirectivesComponent},
-        {path: 'DataFetch', component:DataFetchComponent}
+        {path: 'DataFetch', component:DataFetchComponent},
+        {path: 'login-form', component:LoginFormComponent}
       ]),
     ],
   
