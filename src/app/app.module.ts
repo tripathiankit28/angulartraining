@@ -14,6 +14,7 @@ import {DataService} from './data.service'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     AboutUsComponent,
     ContactUsComponent,
     DataFetchComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { FormsModule } from '@angular/forms';
         {path: 'contact-us', component: ContactUsComponent},
         {path: 'directives', component:DirectivesComponent},
         {path: 'DataFetch', component:DataFetchComponent},
-        {path: 'login-form', component:LoginFormComponent}
+        {path: 'login-form', component:LoginFormComponent},
+        {path: 'todo', component:TodoComponent}
       ]),
     ],
   
