@@ -15,6 +15,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
+import { MenuComponent } from './admin/menu/menu.component';
+import { TodoadminModule } from './todoadmin/todoadmin.module';
+import { TodoadminComponent } from './todoadmin/todoadmin.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,14 @@ import { TodoComponent } from './todo/todo.component';
     ContactUsComponent,
     DataFetchComponent,
     LoginFormComponent,
-    TodoComponent
+    TodoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    TodoadminModule,
     FormsModule,
     RouterModule.forRoot([
         {path: 'about-us', component: AboutUsComponent},
@@ -39,7 +44,7 @@ import { TodoComponent } from './todo/todo.component';
         {path: 'directives', component:DirectivesComponent},
         {path: 'DataFetch', component:DataFetchComponent},
         {path: 'login-form', component:LoginFormComponent},
-        {path: 'todo', component:TodoComponent}
+        {path: 'todoadmin/todolist', component:TodoadminComponent}
       ]),
     ],
   

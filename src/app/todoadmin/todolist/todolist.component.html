@@ -1,0 +1,23 @@
+<a href="/todoadmin/todolist/create" class="btn">Add List</a>
+<table>
+    <thead>
+        <tr>
+            <th>#id</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>action</th>
+        </tr>
+    </thead>
+
+<tbody>
+    <tr *ngFor="let i of todolists">
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.status}}</td>
+        <td>
+            <a [routerLink]="['/todoadmin/todolist/',i.id,'edit']" class="btn">Edit</a>
+            <button class="btn btn-del" (click)="todoDel(i.id)"> Delete</button>
+        </td>
+    </tr>
+</tbody>
+</table>
