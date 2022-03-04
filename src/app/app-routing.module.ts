@@ -23,7 +23,9 @@ const routes: Routes = [
         path: 'todolist/:id/edit', component:TodolistEditComponent
       }
     ]
-  }
+  },
+  {path:"lazy",loadChildren:()=>import('./lazy/lazy.module')
+  .then(mod=>mod.LazyModule)}
 ];
 
 @NgModule({

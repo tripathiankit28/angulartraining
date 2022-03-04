@@ -1,28 +1,50 @@
-<div style="text-align: center;">
-    <h1>User Registration</h1>
-    <form #login="ngForm" (ngSubmit)="submit(login.value)">
-        <div class="form-group">
-                <label for="firstname">FirstName</label>
-                <input type="text" name="firstname" class="form-control" #name="ngModel" ngModel>
-                <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
-                    FirstName is required
-                </div>
-            </div>
-    
-        <div class="form-group">
-            <label for="lastname">lastName</label>
-            <input type="text" name="lastname" class="form-control" ngModel>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" name="email" class="form-control" ngModel>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password">password</label>
-            <input type="password" name="email" class="form-control" ngModel>
-        </div>
-        <br>
-        <button class="btn btn-primary" type="submit">Submit</button>
-    
+<div class="container">
+   <form [formGroup]="form" (submit)="log(form.value);reset()">
+   <div class="form-group">
+      <label for="firstName">First Name
+      <input type="text" id="firstName" formControlName="firstName" maxlength="20">
+      <div class="alert alert-danger" *ngIf="firstName.touched && firstName.invalid">
+         <div *ngIf="firstName.errors['required']">
+            first name is required
+   </div>
+   <div *ngIf="form.get('firstName').errors['pattern']">
+      first name should be characters
+      </div>
+    </div>
+    </label>  
+    <label for="lastName">last Name
+      <input type="text" id="lastName" formControlName="lastName" maxlength="20">
+      <div class="alert alert-danger" *ngIf="lastName.touched && lastName.invalid">
+         <div *ngIf="form.get('lastName').errors['required']">
+            last name is required
+   </div>
+   <div *ngIf="form.get('lastName').errors['pattern']">
+      last name should be characters
+      </div>
+    </div>
+    </label>  
+    <label for="email">email
+      <input type="email" id="email" formControlName="email" maxlength="20">
+      <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+         <div *ngIf="form.get('email').errors['required']">
+            email is required
+   </div>
+   <div *ngIf="form.get('email').errors['pattern']">
+      type email like this :- example@gmail.com
+      </div>
+    </div>
+    </label>  
+    <label for="pasword">password
+      <input type="password" id="passoword" formControlName="password" maxlength="20">
+      <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+         <div *ngIf="form.get('password').errors['required']">
+            password is required
+   </div>
+   <div *ngIf="form.get('password').errors['pattern']">
+      Invalid Password
+      </div>
+    </div>
+    </label>  
+    <button type="submit" id="btn-submit" [disabled]="!form.valid">Submit</button>
+   
+</div>

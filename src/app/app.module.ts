@@ -18,6 +18,9 @@ import { TodoComponent } from './todo/todo.component';
 import { MenuComponent } from './admin/menu/menu.component';
 import { TodoadminModule } from './todoadmin/todoadmin.module';
 import { TodoadminComponent } from './todoadmin/todoadmin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PipesComponent } from './pipes/pipes.component';
+import { WelcomepgComponent } from './welcomepg/welcomepg.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { TodoadminComponent } from './todoadmin/todoadmin.component';
     DataFetchComponent,
     LoginFormComponent,
     TodoComponent,
-    MenuComponent
+    MenuComponent,
+    PipesComponent,
+    WelcomepgComponent
   ],
   imports: [
     BrowserModule,
@@ -38,13 +43,15 @@ import { TodoadminComponent } from './todoadmin/todoadmin.component';
     AppRoutingModule,
     TodoadminModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
         {path: 'about-us', component: AboutUsComponent},
         {path: 'contact-us', component: ContactUsComponent},
         {path: 'directives', component:DirectivesComponent},
         {path: 'DataFetch', component:DataFetchComponent},
         {path: 'login-form', component:LoginFormComponent},
-        {path: 'todoadmin/todolist', component:TodoadminComponent}
+        {path: 'todoadmin/todolist', component:TodoadminComponent},
+        {path : 'pipes' , component:PipesComponent}
       ]),
     ],
   
