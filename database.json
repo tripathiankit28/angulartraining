@@ -1,0 +1,32 @@
+{
+  "signup": [
+    {
+      "name": "",
+      "email": "example@gmail.com",
+      "mobile": 123456789,
+      "password": "1234@!",
+      "id": 1
+    },
+    {
+      "name": "test",
+      "email": "test@gmail.com",
+      "mobile": 123456789,
+      "password": "yoyo",
+      "id": 2
+    },
+    {
+      "name": "ankit",
+      "email": "test1@gmail.com",
+      "mobile": 123456789,
+      "password": "test1",
+      "id": 3
+    },
+    {
+      "name": "ankit",
+      "email": "ankit@gmail.com",
+      "mobile": 123456789,
+      "password": "1234",
+      "id": 4
+    }
+  ]
+}
